@@ -27,7 +27,7 @@ jobs:
         run: dotnet build back-end.sln --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+        run: dotnet publish back-end.sln -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -64,3 +64,4 @@ jobs:
           package: .
 
           
+
